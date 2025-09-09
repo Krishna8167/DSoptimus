@@ -11,14 +11,11 @@ class Solution {
     public int findInMountainArray(int target, MountainArray mountainArr) {
         int n = mountainArr.length();
 
-        // 1️⃣ Find the peak element index
         int peak = findPeakIndex(mountainArr, n);
 
-        // 2️⃣ Try to find target in the increasing part [0..peak]
         int firstTry = orderAgnosticBinarySearch(target, mountainArr, 0, peak);
         if (firstTry != -1) return firstTry;
 
-        // 3️⃣ If not found, try in decreasing part [peak+1..n-1]
         return orderAgnosticBinarySearch(target, mountainArr, peak + 1, n - 1);
     }
 

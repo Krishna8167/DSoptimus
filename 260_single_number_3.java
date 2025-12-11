@@ -5,7 +5,7 @@ class Solution {
             xor ^=num;
         }
 
-        int differbit = xor & (-xor);
+        int differbit = xor & (-xor);    //The operation guarentees the differnce between the unique bits. 
 
         int a = 0, b = 0;
         for (int num : nums) {
